@@ -11,13 +11,23 @@
     <title>Card War</title>
 </head>
 <body>
+    <header>
+        <img src="img/logo.png" alt="">
+        <h1>Card War</h1>
+    </header>
     <div class="container">
         <button id="new-deck">New Deck <img src="img/deck-of-card.png" alt=""></button>
-        <div id="card-images">
-            <div class="card-placeholder"></div>
-            <div class="card-placeholder"></div>
+        <div id="message">Start to War!</div>
+        <div id="game-screen">
+            <h3 id="score-pc"></h3>
+            <div id="card-images">
+                <div class="card-placeholder"></div>
+                <p id="remaining-cards"></p>
+                <div class="card-placeholder"></div>
+            </div>
+            <h3 id="score-me"></h3>
         </div>
-        <button id="new-cards">Draw Card <img src="img/draw.png" alt=""></button>
+        <button id="new-cards">Draw Card<img src="img/draw.png" alt=""></button>
     </div>
         
     <script src="app.js"></script>
