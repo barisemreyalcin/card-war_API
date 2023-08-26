@@ -24,7 +24,7 @@ function newDeck() {
             twoCardsBtn.style.visibility = "visible";
             scoreMeEl.textContent = `Me: 0`;
             scorePcEl.textContent = `Computer: 0`;
-
+            messageEl.textContent = `Start to War!`
             scorePc = 0;
             scoreMe = 0;
         })
@@ -43,6 +43,13 @@ function newCards() {
             remainingCardsEl.textContent = `Remaining Cards: ${data.remaining}`;
             if(data.remaining === 0) {
                 twoCardsBtn.style.visibility = "hidden";
+                if(scoreMe > scorePc) {
+                    messageEl.innerHTML = `<strong>You Won the War! 🥳</strong>`;
+                } else if(scorePc > scoreMe) {
+                    messageEl.innerHTML = `<strong>You Lost the War! 😥</strong>`;
+                } else {
+                    messageEl.innerHTML = `<strong>It is a Tie! ⚔️</strong>`;
+                }
             }
         })
 }
@@ -55,13 +62,13 @@ function determineCardWinner(card1, card2) {
     if(card1Value > card2Value) {
         scorePc++;
         scorePcEl.textContent = `Computer: ${scorePc}`;
-    return "Computer Wins! 😥";
+    return "Computer Wins!";
     } else if(card2Value > card1Value) {
         scoreMe++;
         scoreMeEl.textContent = `Me: ${scoreMe}`;
-        return "You Win! 🥳";
+        return "You Win!";
     } else {
-        return "War! ⚔️";
+        return "War!";
     }
 
 }
